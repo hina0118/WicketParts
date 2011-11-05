@@ -1,11 +1,39 @@
 <html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd" >
     <head>  
         <title>Wicket Quickstart Archetype Homepage</title>
+		<wicket:link>
+			<link rel="stylesheet" type="text/css" href="resources/css/ext-all.css" />
+			<script type="text/javascript" src="bootstrap.js"></script>
+		</wicket:link>
     </head>
     <body>
         <strong>Wicket Quickstart Archetype Homepage</strong>
         <br/><br/>
         <a href="#" wicket:id="top">Top</a>
         <br/><br/>
+		<form wicket:id="form">
+			<select id="combo" name="combo" wicket:id="combo">
+				<option>Apples</option>
+				<option selected>Oranges</option>
+				<option>Pears</option>
+			</select>
+			<input type="hidden" wicket:id="manualInputValue" id="manualInputValue">
+			<br/>
+			<input type="submit" value="値を確認" onclick="copyToHiddenField();">
+		</form>
+        <br/><br/>
+		id→<span wicket:id="selectedId"></span><br>
+		value→<span wicket:id="selectedValue"></span>
+		<script language="JavaScript" type="text/javascript">
+			var transformed = Ext.create('Ext.form.field.ComboBox', {
+				typeAhead: true,
+				transform: 'combo',
+				width: 135
+			});
+			function copyToHiddenField() {
+				var hiddenField = document.getElementById('manualInputValue');
+				hiddenField.value = transformed.getValue();
+			}
+		</script>
     </body>
 </html>

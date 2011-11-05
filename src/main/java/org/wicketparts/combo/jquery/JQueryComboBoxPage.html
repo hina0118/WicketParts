@@ -1,21 +1,38 @@
 <html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd" >
     <head>  
         <title>Wicket Quickstart Archetype Homepage</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<wicket:link>
+			<link rel="stylesheet" type="text/css" href="mko/jquery-ui.css" />
+			<script type="text/javascript" src="comboEditable.min.js"></script>
+		</wicket:link>
+		<script language="JavaScript" type="text/javascript">
+			$(function() {
+				$('#fruit-choices').comboEditable();
+			});
+			function copyToHiddenField() {
+				var hiddenField = document.getElementById('manualInputValue');
+				hiddenField.value = "";
+			}
+		</script>
     </head>
     <body>
         <strong>Wicket Quickstart Archetype Homepage</strong>
         <br/><br/>
         <a href="#" wicket:id="top">Top</a>
         <br/><br/>
-		<script language="JavaScript" type="text/javascript">
-			$(function() {
-				$('#fruit-choices').comboEditable();
-			});
-		</script>
-		<select id="fruit-choices">
-			<option>apples</option>
-			<option>oranges</option>
-			<option>pineapples</option>
-		</select>
+		<form wicket:id="form">
+			<select id="fruit-choices" wicket:id="combo">
+				<option>apples</option>
+				<option>oranges</option>
+				<option>pineapples</option>
+			</select>
+			<input type="hidden" wicket:id="manualInputValue" id="manualInputValue">
+			<br/>
+			<input type="submit" value="値を確認" onclick="copyToHiddenField();">
+		</form>
+        <br/><br/>
+		id→<span wicket:id="selectedId"></span><br>
+		value→<span wicket:id="selectedValue"></span>
     </body>
 </html>

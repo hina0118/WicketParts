@@ -16,6 +16,13 @@ import org.wicketparts.combo.ChoiceElement;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Created by IntelliJ IDEA.
+ * User: chaame
+ * Date: 11/11/03
+ * Time: 22:53
+ * To change this template use File | Settings | File Templates.
+ */
 public class DhxComboBoxPage extends WebPage implements IHeaderContributor {
 	private String selectedId;
 	private String selectedValue;
@@ -40,6 +47,7 @@ public class DhxComboBoxPage extends WebPage implements IHeaderContributor {
 			@Override
 			protected void onSubmit() {
 				ChoiceElement elem = combo.getModelObject();
+				// DHXの場合はgetModelObjectがnullを返す
 				if (elem != null) {
 					// 選択した値の場合
 					selectedId = elem.getId();
