@@ -1,0 +1,40 @@
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd" >
+    <head>  
+        <title>Wicket Quickstart Archetype Homepage</title>
+		<wicket:link>
+			<link rel="stylesheet" type="text/css" href="codebase/dhtmlxcombo.css" />
+			<script type="text/javascript" src="codebase/dhtmlxcommon.js"></script>
+			<script type="text/javascript" src="codebase/dhtmlxcombo.js"></script>
+		</wicket:link>
+    </head>
+    <body>
+        <strong>Wicket Quickstart Archetype Homepage</strong>
+        <br/><br/>
+        <a href="#" wicket:id="top">Top</a>
+        <br/><br/>
+		<form wicket:id="form">
+			<select style='width:200px;' id="combo_zone1" name="alfa1" wicket:id="combo">
+				<option value="1">a00</option>
+				<option value="2">a01</option>
+				<option value="3" selected>a02</option>
+				<option value="4">a10</option>
+				<option value="5">a11</option>
+			</select>
+			<input type="hidden" wicket:id="manualInputValue" id="manualInputValue">
+			<input type="submit" value="値を確認" onclick="copyToHiddenField();">
+		</form>
+        <br/><br/>
+		id→<span wicket:id="selectedId"></span><br>
+		value→<span wicket:id="selectedValue"></span>
+		<script language="JavaScript" type="text/javascript">
+			var combo = dhtmlXComboFromSelect("combo_zone1");
+			var hiddenField = document.getElementById('manualInputValue');
+			if (hiddenField.value != "") {
+				combo.setComboText(hiddenField.value);
+			}
+			function copyToHiddenField() {
+				hiddenField.value = combo.getComboText();
+			}
+		</script>
+    </body>
+</html>

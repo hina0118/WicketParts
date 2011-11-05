@@ -1,0 +1,21 @@
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd" >
+    <head>  
+        <title>Wicket Quickstart Archetype Homepage</title>
+    </head>
+    <body>
+        <strong>Wicket Quickstart Archetype Homepage</strong>
+        <br/><br/>
+        <a href="#" wicket:id="top">Top</a>
+        <br/><br/>
+		<script language="JavaScript" type="text/javascript">
+			$(function() {
+				$('#fruit-choices').comboEditable();
+			});
+		</script>
+		<select id="fruit-choices">
+			<option>apples</option>
+			<option>oranges</option>
+			<option>pineapples</option>
+		</select>
+    </body>
+</html>
