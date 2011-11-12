@@ -6,6 +6,7 @@ import org.wicketparts.combo.dhx.DhxComboBoxPage;
 import org.wicketparts.combo.dojo.DojoComboBoxPage;
 import org.wicketparts.combo.extjs.ExtJsComboBoxPage;
 import org.wicketparts.combo.jquery.JQueryComboBoxPage;
+import org.wicketparts.combo.jquery2.TextComboBoxPage;
 
 /**
  * Created by IntelliJ IDEA.
@@ -38,6 +39,12 @@ public class TestPage extends WebPage {
 			@Override
 			public void onClick() {
 				setResponsePage(JQueryComboBoxPage.class);
+			}
+		});
+		add(new Link<Void>("jq2"){
+			@Override
+			public void onClick() {
+				setResponsePage(TextComboBoxPage.class);
 			}
 		});
 	}

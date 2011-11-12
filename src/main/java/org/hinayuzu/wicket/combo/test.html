@@ -1,0 +1,37 @@
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd" >
+    <head>
+        <title>Wicket Quickstart Archetype Homepage</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="jquery.dropDownText.css">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.min.js"></script>
+		<script type="text/javascript" src="jquery.dropDownText.js"></script>
+		<script language="JavaScript" type="text/javascript">
+			$(function() {
+				$('#combo').toComboBox({
+					data: [
+						{"value": "ようそA"},
+						{"value": "あいてむB"},
+						{"value": "これでもかC"}
+					]
+				});
+				$('#combo2').toComboBox({
+					data: [
+						{"value": "ようそD"},
+						{"value": "あいてむE"},
+						{"value": "これでもかF"}
+					]
+				});
+				$('#combo3').toComboBox();
+			});
+		</script>
+    </head>
+    <body>
+		<input type="text" id="txt"><input type="button">
+		<br>
+		<input type="text" id="combo" style="width:200px">
+		<br>
+		<input type="text" id="combo2">
+		<br>
+		<input type="text" id="combo3">
+    </body>
+</html>
